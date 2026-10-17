@@ -1,0 +1,497 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="theme-color" content="#071426">
+<title>MineCloud - Minecraft Hosting</title>
+
+<style>
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+  color: #eef8ff;
+  background: #071426;
+}
+
+header {
+  padding: 18px;
+  background: #0d2038;
+  border-bottom: 1px solid #204767;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.logo {
+  font-size: 25px;
+  font-weight: bold;
+  color: #35d7ff;
+}
+
+.badge {
+  background: #12334b;
+  color: #70eaff;
+  padding: 7px 10px;
+  border-radius: 20px;
+  font-size: 12px;
+}
+
+.container {
+  max-width: 900px;
+  margin: auto;
+  padding: 16px;
+}
+
+.hero {
+  background: linear-gradient(135deg, #123759, #0b192c);
+  border: 1px solid #245273;
+  border-radius: 20px;
+  padding: 25px 18px;
+  margin-bottom: 18px;
+}
+
+.hero h1 {
+  font-size: 32px;
+  margin: 10px 0;
+}
+
+.hero p {
+  color: #a9c0d5;
+  line-height: 1.6;
+}
+
+.card {
+  background: #0d2038;
+  border: 1px solid #204767;
+  padding: 18px;
+  border-radius: 17px;
+  margin-bottom: 18px;
+}
+
+h2 {
+  margin-top: 0;
+  font-size: 21px;
+}
+
+label {
+  display: block;
+  font-size: 13px;
+  margin: 15px 0 7px;
+  color: #b8d2e7;
+}
+
+input, select {
+  width: 100%;
+  padding: 12px;
+  border-radius: 10px;
+  border: 1px solid #285171;
+  background: #071426;
+  color: white;
+  font-size: 15px;
+}
+
+button {
+  padding: 12px 14px;
+  border: none;
+  border-radius: 10px;
+  font-weight: bold;
+  cursor: pointer;
+  font-size: 14px;
+}
+
+.primary {
+  background: linear-gradient(100deg, #35d7ff, #729fff);
+  color: #061426;
+}
+
+.secondary {
+  background: #173653;
+  color: white;
+  border: 1px solid #2b5476;
+}
+
+button:active {
+  transform: scale(.98);
+}
+
+.full {
+  width: 100%;
+  margin-top: 12px;
+}
+
+.row {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 10px;
+}
+
+.plans {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 12px;
+}
+
+.plan {
+  background: #09192b;
+  border: 1px solid #244765;
+  border-radius: 14px;
+  padding: 15px;
+}
+
+.plan h3 {
+  margin-top: 0;
+}
+
+.price {
+  color: #35d7ff;
+  font-size: 25px;
+  font-weight: bold;
+}
+
+.plan p, .muted {
+  color: #9fb7cb;
+  font-size: 13px;
+  line-height: 1.6;
+}
+
+.status {
+  padding: 13px;
+  border-radius: 10px;
+  background: #071426;
+  border: 1px solid #204767;
+  margin: 12px 0;
+}
+
+.tools {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 10px;
+}
+
+.tool {
+  background: #09192b;
+  border: 1px solid #204767;
+  border-radius: 12px;
+  padding: 14px 10px;
+  color: #eaf7ff;
+  text-align: left;
+}
+
+.tool span {
+  display: block;
+  color: #9fb7cb;
+  font-size: 12px;
+  margin-top: 6px;
+}
+
+.notice {
+  background: #2c2515;
+  border: 1px solid #74602b;
+  color: #f5dfa1;
+  padding: 13px;
+  border-radius: 12px;
+  font-size: 12px;
+  line-height: 1.6;
+  margin-top: 15px;
+}
+
+footer {
+  text-align: center;
+  color: #829bb1;
+  font-size: 12px;
+  padding: 22px 10px;
+}
+
+@media (max-width: 450px) {
+  .hero h1 {
+    font-size: 27px;
+  }
+
+  .container {
+    padding: 12px;
+  }
+
+  .card {
+    padding: 15px;
+  }
+}
+</style>
+</head>
+
+<body>
+
+<header>
+  <div class="logo">☁ MineCloud</div>
+  <div class="badge">FREE + PREMIUM</div>
+</header>
+
+<main class="container">
+
+  <section class="hero">
+    <div class="badge">MINECRAFT SERVER HOSTING</div>
+
+    <h1>Your World.<br>Your Server.</h1>
+
+    <p>
+      Create your Minecraft community with MineCloud.
+      Manage your server from your Android phone.
+    </p>
+
+    <button class="primary"
+      onclick="document.getElementById('create').scrollIntoView({behavior:'smooth'})">
+      + Create Server
+    </button>
+  </section>
+
+  <section class="card">
+    <h2>🚀 Choose Your Plan</h2>
+
+    <div class="plans">
+
+      <div class="plan">
+        <h3>🆓 Free</h3>
+        <div class="price">₹0</div>
+        <p>
+          • Basic server setup<br>
+          • Limited resources<br>
+          • Basic management<br>
+          • Community support
+        </p>
+
+        <button class="primary full"
+          onclick="choosePlan('Free')">
+          Select Free
+        </button>
+      </div>
+
+      <div class="plan">
+        <h3>💎 Premium</h3>
+        <div class="price">Coming Soon</div>
+        <p>
+          • More server resources<br>
+          • More backup options<br>
+          • Priority support<br>
+          • Advanced management
+        </p>
+
+        <button class="secondary full"
+          onclick="choosePlan('Premium')">
+          Select Premium
+        </button>
+      </div>
+
+    </div>
+
+    <p class="muted" id="planMessage">
+      Choose a plan to continue.
+    </p>
+  </section>
+
+  <section class="card" id="create">
+    <h2>⚙️ Create Your Server</h2>
+
+    <label for="serverName">Server Name</label>
+    <input id="serverName"
+      maxlength="30"
+      placeholder="My Minecraft World">
+
+    <label for="edition">Minecraft Edition</label>
+    <select id="edition">
+      <option>Java</option>
+      <option>Bedrock</option>
+    </select>
+
+    <label for="version">Minecraft Version</label>
+    <select id="version">
+      <option>1.21.8</option>
+      <option>1.21.7</option>
+      <option>1.21.6</option>
+      <option>1.20.6</option>
+    </select>
+
+    <label for="mode">Game Mode</label>
+    <select id="mode">
+      <option>Survival</option>
+      <option>Creative</option>
+      <option>Adventure</option>
+      <option>Spectator</option>
+    </select>
+
+    <label for="players">Player Slots</label>
+    <select id="players">
+      <option value="5">5 Players</option>
+      <option value="10">10 Players</option>
+      <option value="20">20 Players</option>
+    </select>
+
+    <label for="owner">Minecraft Username</label>
+    <input id="owner"
+      maxlength="16"
+      placeholder="Your username">
+
+    <button class="primary full" onclick="createServer()">
+      Create Server Setup
+    </button>
+
+    <div class="status" id="serverStatus">
+      Status: No server created
+    </div>
+
+    <div class="row">
+      <button class="primary" onclick="serverAction('Start')">
+        ▶ Start
+      </button>
+
+      <button class="secondary" onclick="serverAction('Stop')">
+        ■ Stop
+      </button>
+    </div>
+
+    <button class="secondary full"
+      onclick="serverAction('Restart')">
+      ↻ Restart Server
+    </button>
+  </section>
+
+  <section class="card">
+    <h2>🛠️ Server Management</h2>
+
+    <div class="tools">
+
+      <button class="tool" onclick="showFeature('Plugins & Mods')">
+        🧩 Plugins & Mods
+        <span>Manage extensions</span>
+      </button>
+
+      <button class="tool" onclick="showFeature('File Manager')">
+        📁 File Manager
+        <span>World and config files</span>
+      </button>
+
+      <button class="tool" onclick="showFeature('Console & Logs')">
+        📜 Console & Logs
+        <span>View server output</span>
+      </button>
+
+      <button class="tool" onclick="showFeature('Backups')">
+        💾 Backups
+        <span>Protect your world</span>
+      </button>
+
+      <button class="tool" onclick="showFeature('Java + Bedrock')">
+        🌉 Java + Bedrock
+        <span>Crossplay setup</span>
+      </button>
+
+      <button class="tool" onclick="showFeature('Server Settings')">
+        🔧 Server Settings
+        <span>Configure your world</span>
+      </button>
+
+    </div>
+
+    <div class="notice">
+      <strong>Development preview:</strong>
+      These buttons demonstrate the website interface.
+      Real server controls, accounts, file access, plugins,
+      backups and payments require a connected backend.
+      This page does not create a live Minecraft server.
+    </div>
+  </section>
+
+</main>
+
+<footer>
+  MineCloud © 2026<br>
+  Built for Minecraft communities
+</footer>
+
+<script>
+let selectedPlan = "Free";
+let currentServer = false;
+
+function choosePlan(plan) {
+  selectedPlan = plan;
+
+  const message = document.getElementById("planMessage");
+
+  if (plan === "Premium") {
+    message.textContent =
+      "Premium is coming soon. No payment has been taken.";
+  } else {
+    message.textContent =
+      "Free plan selected. Create your server setup below.";
+  }
+}
+
+function createServer() {
+  const name =
+    document.getElementById("serverName").value.trim();
+
+  const owner =
+    document.getElementById("owner").value.trim();
+
+  if (!name) {
+    alert("Please enter a server name.");
+    return;
+  }
+
+  if (!owner) {
+    alert("Please enter your Minecraft username.");
+    return;
+  }
+
+  const edition =
+    document.getElementById("edition").value;
+
+  const version =
+    document.getElementById("version").value;
+
+  const mode =
+    document.getElementById("mode").value;
+
+  const players =
+    document.getElementById("players").value;
+
+  currentServer = true;
+
+  document.getElementById("serverStatus").textContent =
+    "Setup preview: " + name +
+    " | " + edition +
+    " | Version " + version +
+    " | " + mode +
+    " | " + players + " player slots" +
+    " | Plan: " + selectedPlan;
+
+  alert(
+    "Your settings preview is ready! " +
+    "A hosting backend is needed to create a live server."
+  );
+}
+
+function serverAction(action) {
+  if (!currentServer) {
+    alert("Please create a server setup first.");
+    return;
+  }
+
+  alert(
+    action + " is currently a demo button. " +
+    "A backend must be connected to control a real server."
+  );
+}
+
+function showFeature(feature) {
+  alert(
+    feature + " will work after the server backend is connected."
+  );
+}
+</script>
+
+</body>
+  </html>
